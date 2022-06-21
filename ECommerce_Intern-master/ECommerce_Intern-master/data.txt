@@ -1,0 +1,2 @@
+1, Nokia C30, Nokia C30 smart phone, Mobile, Nokia, 25000.00, InStock, 23 
+2, Samswung galaxy, Samswung galaxy smart phone, Mobile, Samswung, 20000.00, InStock, 14
