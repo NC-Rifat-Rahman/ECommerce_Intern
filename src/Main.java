@@ -60,39 +60,35 @@ public class Main
                 .filter(productfilter -> productfilter.getAvailibility().equals(Availibility.Instock))
                 .collect(Collectors.toList());
 
-        // Filter by price range
         //float startPrice=sc.nextFloat();
         //float endPrice=sc.nextFloat();
 
+
+        // Filter by price range
         float startPrice=1000.0F;
         float endPrice=2000.0F;
 
         if(Products.getPrice()>=startPrice && Products.getPrice()<=endPrice)
         {
             List<Products> filteredPrice = products.stream()
-                    .filter(pricefilter -> Boolean.parseBoolean(pricefilter.getName()))
+                    .filter(pricefilter -> pricefilter.getName().equals(startPrice))
                     .collect(Collectors.toList());
             System.out.println(filteredPrice);
-        }
-        else
-        {
-            // TO-DO
         }
 
         System.out.println(filtered);
 
-        // Sort price (high to low, low to high)
 
-
-        // Purchase Product
+        // Purchase
         int stockAmount=Products.getAmounInstock();
-        //int enterAmount=sc.nextInt();
-        int enterAmount=10;
+        int enterAmount=sc.nextInt();
 
         if(stockAmount>=enterAmount)
         {
+            System.out.println("a");
             Date date = new Date();
             //System.out.print(date);
+
 
             stockAmount-=enterAmount;
 
@@ -106,6 +102,7 @@ public class Main
                 myWriter.write(x);
 
                 myWriter.close();
+                System.out.println("Successfully wrote to the file.");
             }
             catch (IOException e)
             {
@@ -115,7 +112,7 @@ public class Main
         }
         else
         {
-            //TO-DO
+            //throw exception
         }
 
 
